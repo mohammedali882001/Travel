@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="booking.css" />
+    <title>Booking</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+   <!-- <link rel="stylesheet" href="style.css"> -->
+   <!-- Demo CSS (No need to include it into your project) -->
+   <!-- <link rel="stylesheet" href="demo.css"> -->
+   <!-- <link rel="stylesheet" href="index.css"> -->
+  </head>
+  <body>
+
+    <nav class="navbar fixed-lg-top navbar-expand-lg  bg-body-tertiary  mb-5" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../your_flight/index.html"><img src="images\pngegg (3).png" alt="Logo" width="60" height=""
+            class="mb-2">Travel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-3">
+              <a class="nav-link" aria-current="page" href="../your_flight/index.html">Home</a>
+            </li>
+            <!-- <li class="nav-item mx-3">
+              <a class="nav-link" href="#">Our Tours</a>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Booking</a>
+            </li> -->
+            <!-- <li class="nav-item mx-3">
+              <a class="nav-link" href="#goforabout">About </a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="#goforcontact">Contact Us </a>
+            </li> -->
+          </ul>
+          <form class="d-flex" role="search">
+            <button class="btn btn-outline-success me-2" type="submit">LogIn</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row justify-content-around align-content-center">
+         <div class="col-lg-7 col-md-6 col-sm-12 col-12 mb-2">
+            <div class="feat1">
+               <img src="plane.jpeg" class="img-fluid plane" alt="">
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-2 ms-5 d-flex justify-content-center ">
+
+            <div class="submit-form justify-content-center d-flex flex-column align-items-center">
+               <h4 class="py-1 ">Book a Flight</h4>  <span class="jelly-triangle">
+                  <div class="jelly-triangle__dot"></div>
+                  <div class="jelly-triangle__traveler"></div>
+               </span>
+              
+              
+              <svg width="0" height="0" class="jelly-maker">
+                  <defs>
+                      <filter id="uib-jelly-triangle-ooze">
+                          <feGaussianBlur in="SourceGraphic" stdDeviation="7.3" result="blur"></feGaussianBlur>
+                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="ooze"></feColorMatrix>
+                          <feBlend in="SourceGraphic" in2="ooze"></feBlend>
+                      </filter>
+                  </defs>
+              </svg>
+               <form id="form-submit" action="" method="get"  onsubmit="submitForm()">
+                  <div class="row my-2">
+                     <div class="col-xs-4 col-lg-4 col-md-4 col-sm-12 ">
+
+                        <div class="">
+                           <label for="inputFirstName" class="col-form-label fw-bold p-2">First Name :</label>
+                        </div>
+                        <div class="input-group input-group-lg ">
+                           <input type="text" id="inputFirstName" class="form-control input-lg" required>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12">
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-4">
+                        <div class="">
+                           <label for="inputSecondName" class="col-form-label fw-bold p-2">Second Name :</label>
+                        </div>
+                        <div class="input-group input-group-lg ">
+                           <input type="text" id="inputSecondName" class="form-control input-lg" required>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row my-2">
+                     <div class="col-xs-4 col-lg-4 col-md-4 col-sm-12 ">
+
+                        <div class="">
+                           <label for="inputemail" class="col-form-label fw-bold p-2">Email :</label>
+                        </div>
+                        <div class="input-group input-group-lg ">
+                           <input type="email" id="inputemail" class="form-control input-lg" required>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12">
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-4">
+                        <div class="">
+                           <label for="inputPassword6" class="col-form-label fw-bold p-2">Password :</label>
+                        </div>
+                        <div class="input-group input-group-lg ">
+                           <input type="password" id="inputPassword6" class="form-control input-lg required">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row my-2 ">
+                     <div class="col-xs-4 col-lg-4 col-md-4 col-sm-12 ">
+
+                        <div class="">
+                           <label for="inputDeparting" class="col-form-label fw-bold p-2">Departing date :</label>
+                        </div>
+                        <div class="input-group input-group-lg ">
+                           <input type="date" id="inputDeparting" class="form-control input-lg" required>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12">
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-4">
+                        <div class="">
+                           <label for="inputReturning" class="col-form-label fw-bold p-2" >Returning date :</label>
+                        </div>
+                        <div class="input-group input-group-lg ">
+                           <input type="date" id="inputReturning" class="form-control input-lg"required>
+                             
+                        </div>
+                     </div>
+                  </div>
+
+                  <h6 class="my-1 fw-bold p-2">Select your Fare : </h6>
+
+
+                  <div class="radio-input" required>
+                     <input value="One-Way" name="value-radio" id="One-Way" type="radio" >
+                     <label for="One-Way" >One-Way</label>
+                     <input value="Round-Trip" name="value-radio" id="Round-Trip" type="radio">
+                     <label for="Round-Trip">Round-Trip</label>
+                  
+                   </div>
+                  <div class="row my-2">
+                     <div class="col-lg-5 col-md-4 col-sm-12 ">
+                        <label for="FlyingFrom" class="col-form-label fw-bold p-2">Flying From :</label>
+                        <input type="text" id="FlyingFrom" class="form-control input-lg autocomplete" required>
+                     </div>
+                     <div class="col-lg-2 col-md-4 col-sm-12 "></div>
+                     <div class="col-lg-5 col-md-4 col-sm-12 ">
+                        <label for="FlyingTo" class="col-form-label fw-bold p-2">Flying To :</label>
+                        <input type="text" id="FlyingTo" class="form-control input-lg autocomplete bg" required>
+                     </div>
+                  </div>
+                  
+
+                  <label for="FlightTime" class="col-form-label fw-bold p-2">Time of Flight   :</label>
+                  <div class="Radio-input py-2" id="FlightTime">
+                     <label>
+                     <input value="hour6" name="value-radio" id="hour6" type="radio" checked="">
+                     <span>hour  6</span>
+                     </label>
+                     <label>
+                       <input value="hour12" name="value-radio" id="hour12" type="radio">
+                     <span>hour  12</span>
+                     </label>
+                     <label>
+                       <input value="hour18" name="value-radio" id="hour18" type="radio">
+                     <span>hour  18</span>
+                     </label>
+                     <label>
+                       <input value="hour24" name="value-radio" id="hour24" type="radio">
+                     <span>hour  24</span>
+                     </label>
+                     <span class="selection"></span>
+                   </div>
+                  <div class="row my-2">
+                     <div class=" col-lg-5 col-md-4 col-sm-12 ">
+                        <label for="Airline" class="col-form-label fw-bold p-2">Preferred Airline :</label>
+                        <select class="form-select form-select-font-size-sm mb-3" id="Airline" required>
+                           <option selected>None</option>
+                           <option value="American Airline">American Airline</option>
+                           <option value="Delta Airlines">Delta Airlines</option>
+                           <option value="Frontier Airline">Frontier Airline</option>
+                           <option value="Jet Blue">Jet Blue</option>
+                           <option value="Southwest Airlines">Southwest Airlines</option>
+                        </select>
+                     </div>
+                     <div class=" col-lg-2 col-md-1 col-sm-12 ">
+                     </div>
+                     <div class=" col-lg-2 col-md-2 col-sm-12  ">
+                        <label for="Adults" class="col-form-label fw-bold p-2">Adults</label>
+                        <select class="form-select form-select-font-size-sm mb-3" id="Adults">
+                           <option selected>None</option>
+                           <option value="1Adults">1</option>
+                           <option value="2Adults">2</option>
+                           <option value="3Adults">3</option>
+                           <option value="4Adults">4</option>
+                           <option value="5Adults">5</option>
+                        </select>
+                     </div>
+                     <div class=" col-lg-1 col-md-4 col-sm-12 ">
+                     </div>
+                     <div class=" col-lg-2 col-md-4 col-sm-12 ">
+                        <label for="Kids" class="col-form-label fw-bold p-2">Kids</label>
+                        <select class="form-select form-select-font-size-sm mb-3" id="Kids">
+                           <option selected>None</option>
+                           <option value="1Kids">1</option>
+                           <option value="2Kids">2</option>
+                           <option value="3Kids">3</option>
+                           <option value="4Kids">4</option>
+                           <option value="5Kids">5</option>
+                        </select>
+                     </div>
+                  </div>
+
+                  <!-- <button type="submit" class="btn ms-5  ">Book Now</button>      -->
+                  <button id="submit-btn" class="btn ms-5" type="submit" onclick="">
+                     <span class="icon">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" class="bi bi-airplane-fill" viewBox="0 0 16 16">
+                   <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z"></path>
+                 </svg>
+                     </span>
+                     <span class="text">Book Now</span>
+                 </button>         
+                </form>
+                <div id="hidden-message" style="display: none;">
+                  <!-- Your hidden message content goes here -->
+                  <p>Form submitted successfully!</p>
+                  <br>
+                  
+                  <div class="timer-container">
+                     <div id="countdown" class="hidden">
+                         <div id="timer"></div>
+                     </div>
+
+                 </div>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+
+    <p id="topic" >Hotels</p>
+    <p id="side-title" class="px-5">Choose Your Hotel:</p>
+    <div class="container px-5">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="feat">
+            <label for="Italy">Italy</label>
+            <input
+              type="radio"
+              name="country"
+              id="Italy"
+              class="radio-btn"
+              data-target="Italy-cards"
+            />
+            <br />
+            <label for="Brasil">Brasil</label>
+            <input
+              type="radio"
+              name="country"
+              id="Brasil"
+              class="radio-btn"
+              data-target="Brasil-cards"
+            />
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="feat">
+            <label for="Greece">Greece</label>
+            <input
+              type="radio"
+              name="country"
+              id="Greece"
+              class="radio-btn"
+              data-target="Greece-cards"
+            />
+            <br />
+            <label for="Netherlands">Netherlands</label>
+            <input
+              type="radio"
+              name="country"
+              id="Netherlands"
+              class="radio-btn"
+              data-target="Netherlands-cards"
+            />
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="feat">
+            <label for="Tanzania">Tanzania</label>
+            <input
+              type="radio"
+              name="country"
+              id="Tanzania"
+              class="radio-btn"
+              data-target="Tanzania-cards"
+            />
+            <br />
+            <label for="France">France</label>
+            <input
+              type="radio"
+              name="country"
+              id="France"
+              class="radio-btn"
+              data-target="France-cards"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <div id="rapped">
+      <div class="card-group Italy-cards">
+        <h1 class="Country">Italy</h1>
+      </div>
+      <div id="rapped">
+        <div class="card-group France-cards">
+          <h1 class="Country">France</h1>
+        </div>
+        <div id="rapped">
+          <div class="card-group Brasil-cards">
+            <h1 class="Country">Brasil</h1>
+          </div>
+          <div id="rapped">
+            <div class="card-group Greece-cards">
+              <h1 class="Country">Greece</h1>
+            </div>
+            <div id="rapped">
+              <div class="card-group Netherlands-cards">
+                <h1 class="Country">Netherlands</h1>
+              </div>
+              <div id="rapped">
+                <div class="card-group Tanzania-cards">
+                  <h1 class="Country">Tanzania</h1>
+                </div>
+
+      <!-- block1 -->
+      <div class="card-group Italy-cards">
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Italy/10_ItalianCountrySideHotels-FilodivinoWineResortAndSpaSuite-07.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Hotel Roma Tor Vergata</p>
+              <p>
+                Detailed information about offers, reviews, services аnd maps of
+                our location
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Italy/181003192609-29-italy-beautiful-hotels-borgo-egnazia.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Hotel Isola Sacra</p>
+              <p>
+                Isola Sacra (the Holy Isle) is situated in the Lazio region of
+                Italy south of Rome
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Italy/9_ItalianCountrySideHotels-AdlerLodgeRitten-200521_HALR_113-Pano-3.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Hotel Florida</p>
+              <p>
+                Our warm and welcoming 511-room hotel offers spacious guest
+                rooms in the heart of Orlando
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="card-group Brasil-cards">
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Brazil/15077123.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Hilton Barra Rio de Janeiro</p>
+              <p>
+                We're in the Barra da Tijuca business district, steps from
+                Shopping Metropolitano Barra and 35 minutes.
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Brazil/92ac3eb1-city-47536-170610d98ce.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Hotel Atlantico Tower</p>
+              <p>
+                rooms offer air conditioning, a minibar, and a refrigerator, and
+                getting online
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Brazil/Brazil_Honeymoon-2.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Windsor Palace Copacabana Hotel</p>
+              <p>
+                With its immaculate facade shining in the sun, the Copacabana
+                Palace is Rio de Janeiro's most iconic hotel.
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="card-group Greece-cards">
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Greece/5da91e4294d6a025fb99faf6fbf7065a.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Kipos Boutique Suites</p>
+              <p>
+                Offers an authentic experience close to main Market and Heraklions finest restaurants and attractions
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Greece/download.jpeg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">S Hotel Boutique Thessaloniki</p>
+              <p>
+                Discover S Hotel, a brand new boutique hotel in the heart of Thessaloniki.
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Greece/the-view-of-fira-town.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">No 15 Ermou Hotel</p>
+              <p>
+                No15 Ermou Hotel opens its doors and invites you to “an adventure of self-exploration”.
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="card-group Netherlands-cards my-5">
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Netherland/5687cba1-city-1334-167c71cc90a.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">nhow Amsterdam Rai</p>
+              <p>
+                who invited architects Baranowitz and Kronenberg to interpret the new project
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Netherland/amsterdamneighborhood1.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Hotel Vie Via - Just a room</p>
+              <p>
+                Instead of checking in at a Front Desk, you will receive an e-mail with your digital key.
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Netherland/anantara-grand-hotel.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Hotel Arsenaal Delft</p>
+              <p>
+                Book a room in Hotel Arsenaal Delft · 63 luxury boutique style rooms · About Hotel Arsenaal 
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card-group Tanzania-cards">
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Tanzania/essque-zalu-zanzibar.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">The Residence Zanzibar</p>
+              <p>
+                No Reservation Costs. Great Rates. Read Real Guest Reviews. Great Choice.
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Tanzania/exterior.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Drifters Zanzibar</p>
+              <p>
+                Drifters offers beach front accommodation on the most laid-back beach in Zanzibar
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/Tanzania/madinat-al-bahr-business.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Kipepeo Beach Village</p>
+              <p>
+                Kipepeo Beach the tropical turquoise waters of the Indian Ocean entice you in at all times. 
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card-group France-cards">
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/France/maxresdefault.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Maison Mère</p>
+              <p>
+                Maison Mère détourne, transforme, et réinvente les codes de l'hôtellerie classique.
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/France/qawafel-almamoorh-hotel.jpg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">La Demeure Montaigne</p>
+              <p>
+                The location and neighbourhood is great, the rooms are beautiful, the entire hotel is stylish and brand new.
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
+              <img src="./Hotels/France/1686568393759.jpeg" alt="" class="imagescard" />
+            </div>
+            <div class="backSide">
+              <p class="title">Château du Boulay Morin</p>
+              <p>
+                he 1200m2 Chateau was built in 1695 by Louis XIV for his mistress Mme de Maintenon.
+              </p>
+              <button id="btn">Book</button>
+              <div class="rating-container" id="ratingContainer">
+                <div class="rating-stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="goforfooter" class="my-5" ></div>
+    <!-- this is footer -->
+    <footer class="contact ">
+      <div class="container ms-5">
+        <div class="row">
+          <div class="col-lg-4 mt-4">
+            <h3>Travel</h3>
+            <p>Our mission is to provide the ultimate travel planning experience while becoming a one-stop shop for every
+              travel service available in the industry.</p>
+            <ul class="list-inline social-icons">
+              <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 mt-4 links">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="#" class="quick-link">Home</a></li>
+              <li><a href="#" class="quick-link">Our Tours</a></li>
+              <li><a href="#" class="quick-link">Booking</a></li>
+              <li><a href="#goforabout" class="quick-link">About Us</a></li>
+              <li><a href="#goforcontact" class="quick-link">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 mt-4  Locations">
+            <h3>Locations</h3>
+            <ul class="list-unstyled">
+              <li>Egypt</li>
+              <li>India</li>
+              <li>USA</li>
+              <li>Japan</li>
+              <li>France</li>
+            </ul>
+          </div>
+  
+  
+          <div class="col-lg-4 mt-4">
+            <h3>Payment Methods</h3>
+            <h5>select one of the most common ways to pay a money for our products.</h5>
+  
+            <img src="images/footer-logo.png" alt="" class="mt-5">
+  
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-lg-12 text-center">
+            <hr>
+            <div class="copy">
+              <section>
+                copyright &copy; at 2023
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+    <script>
+      src =
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js";
+      integrity =
+        "sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM";
+      crossorigin = "anonymous";
+    </script>
+    
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+   
+    <!-- <script src="index.js"></script> -->
+    <script src="booking.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </body>
+</html>
